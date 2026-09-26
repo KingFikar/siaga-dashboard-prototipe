@@ -217,19 +217,182 @@ const otherPages = {
 },
 
 'kasus.html': {
-  title: 'Manajemen Kasus', breadcrumb: 'Kasus', active: 'nav-cases',
+  title: 'SIAGA Case Management System', breadcrumb: 'Penelusuran Kasus', active: 'nav-cases',
   content: `
+  <div style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 60%,#0ea5e9 100%);border-radius:var(--radius);padding:24px 28px;display:flex;align-items:center;gap:20px;margin-bottom:18px;box-shadow:0 8px 32px rgba(15,23,42,0.35)">
+    <div style="width:60px;height:60px;background:rgba(255,255,255,0.12);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ri-folder-shield-2-line" style="font-size:30px;color:#fff"></i></div>
+    <div style="flex:1">
+      <div style="font-size:20px;font-weight:800;color:#fff;margin-bottom:5px">SIAGA Case Management System</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6"><b>Peran:</b> Mengelola siklus kasus dari alert hingga penugasan, inspeksi, verifikasi, keputusan, dan umpan balik.</div>
+    </div>
+    <div style="display:flex;gap:8px;flex-shrink:0">
+      <button style="background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:6px;padding:8px 16px;font-size:12px;font-weight:700;cursor:pointer"><i class="ri-filter-3-line"></i> Filter</button>
+      <button style="background:#fff;color:#0f172a;border:none;border-radius:6px;padding:8px 16px;font-size:12px;font-weight:800;cursor:pointer"><i class="ri-add-line"></i> Buka Kasus Baru</button>
+    </div>
+  </div>
+
   <div class="kpi-grid">
     <div class="kpi-card red" id="kpi-ks-aktif"><div class="kpi-top"><div class="kpi-icon red"><i class="ri-folder-open-line"></i></div><div class="kpi-body"><div class="kpi-val">34</div><div class="kpi-lbl">Kasus Aktif</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-delta up"><i class="ri-arrow-up-s-fill"></i>+4 pekan ini</span></div></div></div>
-    <div class="kpi-card amber" id="kpi-ks-hukum"><div class="kpi-top"><div class="kpi-icon amber"><i class="ri-scales-line"></i></div><div class="kpi-body"><div class="kpi-val">12</div><div class="kpi-lbl">Proses Hukum</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">3 sidang minggu ini</span></div></div></div>
-    <div class="kpi-card indigo" id="kpi-ks-inv"><div class="kpi-top"><div class="kpi-icon indigo"><i class="ri-time-line"></i></div><div class="kpi-body"><div class="kpi-val">18</div><div class="kpi-lbl">Investigasi</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">Rata-rata 42 hari</span></div></div></div>
-    <div class="kpi-card violet" id="kpi-ks-denda"><div class="kpi-top"><div class="kpi-icon violet"><i class="ri-money-dollar-circle-line"></i></div><div class="kpi-body"><div class="kpi-val">Rp 28,4M</div><div class="kpi-lbl">Denda Tertagih</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-delta up"><i class="ri-arrow-up-s-fill"></i>+Rp4,2M bulan ini</span></div></div></div>
+    <div class="kpi-card amber" id="kpi-ks-verif"><div class="kpi-top"><div class="kpi-icon amber"><i class="ri-shield-check-line"></i></div><div class="kpi-body"><div class="kpi-val">12</div><div class="kpi-lbl">Menunggu Verifikasi</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">Perlu ditindaklanjuti</span></div></div></div>
+    <div class="kpi-card indigo" id="kpi-ks-insp"><div class="kpi-top"><div class="kpi-icon indigo"><i class="ri-time-line"></i></div><div class="kpi-body"><div class="kpi-val">18</div><div class="kpi-lbl">Dalam Inspeksi</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">Rata-rata 42 hari</span></div></div></div>
+    <div class="kpi-card violet" id="kpi-ks-closed"><div class="kpi-top"><div class="kpi-icon violet"><i class="ri-check-double-line"></i></div><div class="kpi-body"><div class="kpi-val">187</div><div class="kpi-lbl">Kasus Ditutup</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-delta up"><i class="ri-arrow-up-s-fill"></i>+23 bulan ini</span></div></div></div>
   </div>
-  <div class="card" style="overflow:hidden">
-    <div class="card-header"><span class="ch-title"><i class="ri-folder-line"></i>Daftar Kasus</span><button id="ks-add-btn" style="background:var(--primary);color:#fff;border:none;border-radius:6px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer"><i class="ri-add-line"></i> Buka Kasus Baru</button></div>
-    ${[['KS-2026-089','Pencemaran Sungai Mahakam','PT ABC Industries','Pencemaran Air','Kritis','Investigasi','danger','4 Sep 2026'],['KS-2026-088','Emisi SO₂ Melebihi Baku Mutu','PT XYZ Petrochemical','Pencemaran Udara','Tinggi','Proses Hukum','warning','28 Ags 2026'],['KS-2026-087','Pembukaan Lahan Ilegal 280 Ha','PT Borneo Coal','Perusakan Lahan','Tinggi','Investigasi','warning','20 Ags 2026'],['KS-2026-086','Pelaporan AMDAL Tidak Valid','PT Smelter Nusantara','Administratif','Sedang','Mediasi','warning','15 Ags 2026'],['KS-2026-085','Pembuangan Limbah B3 Ilegal','PT Industri Kimia Mas','Limbah B3','Tinggi','Proses Hukum','warning','10 Ags 2026'],['KS-2026-084','Penambangan di Luar Batas Izin','PT MNO Mining','Pelanggaran Izin','Sedang','Penyelidikan','warning','5 Ags 2026'],['KS-2026-083','Tumpahan Minyak 500 Liter','PT Energi Baru','Pencemaran Air','Rendah','Selesai','success','1 Ags 2026']].map(r=>`<div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid var(--border-soft);cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='var(--bg-hover)'" onmouseout="this.style.background=''"><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap"><span style="font-family:monospace;font-size:10.5px;color:var(--text-4);background:var(--bg-surface-2);padding:1px 7px;border-radius:4px">${r[0]}</span><span style="font-size:13px;font-weight:700;color:var(--text-1)">${r[1]}</span></div><div style="display:flex;gap:14px;flex-wrap:wrap"><span style="font-size:11px;color:var(--text-4)"><i class="ri-building-line"></i> ${r[2]}</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-price-tag-3-line"></i> ${r[3]}</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-calendar-line"></i> ${r[7]}</span></div></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0"><span style="background:var(--${r[6]}-soft);color:var(--${r[6]}-2);font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px">${r[4]}</span><span style="font-size:11px;color:var(--text-3);font-weight:600">${r[5]}</span></div></div>`).join('')}
+
+  <!-- STATUS FLOW -->
+  <div class="card" style="margin-bottom:18px">
+    <div style="padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <div style="font-size:11.5px;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:0.5px">Alur Status Kasus</div>
+      ${[['ALERT','danger'],['ASSIGNED','warning'],['INSPECTION','warning'],['VERIFICATION','indigo'],['EXECUTIVE DECISION','violet'],['CLOSED / FOLLOW-UP','success']].map((s,i,arr)=>`
+      <div style="display:flex;align-items:center;gap:6px">
+        <span style="background:var(--${s[1]}-soft);color:var(--${s[1]}-2);font-size:10.5px;font-weight:800;padding:5px 12px;border-radius:999px;white-space:nowrap">${s[0]}</span>
+        ${i < arr.length-1 ? '<i class="ri-arrow-right-s-line" style="color:var(--text-4);font-size:18px"></i>' : ''}
+      </div>`).join('')}
+    </div>
+  </div>
+
+  <div class="main-grid" style="align-items:start">
+    <!-- LEFT: Case List -->
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div class="card" style="overflow:hidden">
+        <div class="card-header">
+          <span class="ch-title"><i class="ri-folder-line"></i>Prototype Case List</span>
+          <div style="display:flex;gap:6px">
+            <input type="text" placeholder="Cari kasus..." style="background:var(--bg-surface);border:1px solid var(--border);border-radius:6px;padding:5px 12px;font-size:12px;color:var(--text-1);outline:none;width:160px">
+            <button style="background:var(--primary);color:#fff;border:none;border-radius:6px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer"><i class="ri-add-line"></i> Buka Kasus</button>
+          </div>
+        </div>
+        <div style="overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+            <thead><tr style="background:var(--bg-surface-2);border-bottom:1px solid var(--border)">
+              ${['Case ID','Company','Risk','Status','Tgl Dibuka','Aksi'].map(h=>`<th style="padding:10px 14px;text-align:left;font-weight:700;color:var(--text-3);font-size:11px;text-transform:uppercase;white-space:nowrap">${h}</th>`).join('')}
+            </tr></thead>
+            <tbody>
+              ${[
+                ['CASE-001','PT ABC Industries','92','danger','INSPECTION','warning','4 Sep 2026'],
+                ['CASE-002','PT XYZ Petrochemical','84','danger','VERIFICATION','indigo','10 Sep 2026'],
+                ['CASE-003','PT MNO Mining','67','warning','ASSIGNED','warning','18 Sep 2026'],
+                ['CASE-004','PT DEF Resources','38','success','CLOSED','success','5 Ags 2026'],
+                ['CASE-005','PT Borneo Coal','71','warning','INSPECTION','warning','20 Sep 2026'],
+                ['CASE-006','PT Smelter Nusantara','68','warning','EXECUTIVE DECISION','violet','22 Sep 2026'],
+                ['CASE-007','PT Industri Kimia Mas','61','warning','ALERT','danger','25 Sep 2026'],
+              ].map((r,i)=>`
+              <tr style="border-bottom:1px solid var(--border-soft);cursor:pointer;transition:background 0.12s" onmouseover="this.style.background='var(--bg-hover)'" onmouseout="this.style.background=''">
+                <td style="padding:11px 14px"><span style="font-family:monospace;font-size:11px;font-weight:700;color:var(--primary);background:var(--primary-soft);padding:2px 8px;border-radius:4px">${r[0]}</span></td>
+                <td style="padding:11px 14px;font-weight:700;color:var(--text-1)">${r[1]}</td>
+                <td style="padding:11px 14px;text-align:center"><span style="font-size:15px;font-weight:800;color:var(--${r[3]}-2)">${r[2]}</span></td>
+                <td style="padding:11px 14px"><span style="background:var(--${r[5]}-soft);color:var(--${r[5]}-2);font-size:10px;font-weight:800;padding:4px 10px;border-radius:999px;text-transform:uppercase;white-space:nowrap">${r[4]}</span></td>
+                <td style="padding:11px 14px;color:var(--text-4);font-size:11px;white-space:nowrap">${r[6]}</td>
+                <td style="padding:11px 14px"><button style="background:var(--primary-soft);color:var(--primary);border:none;border-radius:5px;padding:4px 10px;font-size:11px;font-weight:600;cursor:pointer">Detail</button></td>
+              </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CASE TIMELINE overall stats -->
+      <div class="card">
+        <div class="card-header"><span class="ch-title"><i class="ri-bar-chart-box-line"></i>Distribusi Status Kasus</span></div>
+        <div style="padding:16px;display:flex;flex-direction:column;gap:12px">
+          ${[['ALERT','7','danger'],['ASSIGNED','5','warning'],['INSPECTION','10','warning'],['VERIFICATION','8','indigo'],['EXECUTIVE DECISION','4','violet'],['CLOSED / FOLLOW-UP','187','success']].map(r=>`
+          <div style="display:flex;align-items:center;gap:12px">
+            <span style="width:130px;font-size:12px;font-weight:600;color:var(--text-2);white-space:nowrap">${r[0]}</span>
+            <div style="flex:1;height:8px;background:var(--bg-surface-3);border-radius:99px;overflow:hidden">
+              <div style="height:100%;background:var(--${r[2]});border-radius:99px;width:${Math.round(parseInt(r[1])/221*100)}%"></div>
+            </div>
+            <span style="font-size:12px;font-weight:800;color:var(--${r[2]}-2);width:30px;text-align:right">${r[1]}</span>
+          </div>`).join('')}
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Case Detail -->
+    <div style="display:flex;flex-direction:column;gap:18px">
+
+      <!-- Detail Header -->
+      <div class="card">
+        <div class="card-header" style="background:linear-gradient(135deg,rgba(239,68,68,0.06),rgba(245,158,11,0.04));border-bottom:1px solid var(--border)">
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--text-4);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">Detail Case</div>
+            <span class="ch-title" style="font-size:16px"><i class="ri-folder-shield-2-line" style="color:var(--danger)"></i> CASE #CASE-001</span>
+          </div>
+          <span style="background:var(--danger-soft);color:var(--danger-2);font-size:11px;font-weight:800;padding:5px 13px;border-radius:999px">PRIORITAS TINGGI</span>
+        </div>
+        <div style="padding:16px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div style="background:var(--bg-surface-2);border-radius:8px;padding:11px 14px;border:1px solid var(--border-soft)"><div style="font-size:10.5px;font-weight:600;color:var(--text-4);margin-bottom:3px;text-transform:uppercase">Company</div><div style="font-size:13px;font-weight:800;color:var(--text-1)">PT ABC Industries</div></div>
+            <div style="background:var(--danger-soft);border-radius:8px;padding:11px 14px;border:1px solid rgba(239,68,68,0.15)"><div style="font-size:10.5px;font-weight:600;color:var(--danger-2);margin-bottom:3px;text-transform:uppercase">Risk Score</div><div style="font-size:22px;font-weight:900;color:var(--danger-2)">92 <span style="font-size:12px;font-weight:600;color:var(--text-4)">/ 100</span></div></div>
+            <div style="background:var(--bg-surface-2);border-radius:8px;padding:11px 14px;border:1px solid var(--border-soft)"><div style="font-size:10.5px;font-weight:600;color:var(--text-4);margin-bottom:3px;text-transform:uppercase">Status</div><div style="font-size:12px;font-weight:800;color:var(--warning-2)">INSPECTION</div></div>
+            <div style="background:var(--bg-surface-2);border-radius:8px;padding:11px 14px;border:1px solid var(--border-soft)"><div style="font-size:10.5px;font-weight:600;color:var(--text-4);margin-bottom:3px;text-transform:uppercase">Dibuka</div><div style="font-size:12px;font-weight:700;color:var(--text-1)">4 Sep 2026</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="card">
+        <div class="card-header"><span class="ch-title"><i class="ri-git-commit-line"></i>Case Timeline</span></div>
+        <div style="padding:18px 20px;position:relative">
+          <div style="position:absolute;left:33px;top:28px;bottom:28px;width:2px;background:var(--border-soft)"></div>
+          ${[
+            ['AI Alert','Anomali terdeteksi oleh AI Engine pada 4 Sep 2026.','Completed','success'],
+            ['Task Assignment','Ditugaskan ke Inspektor Budi Santoso.','Completed','success'],
+            ['Field Inspection','Inspeksi lapangan dilaksanakan 20 Sep 2026.','Completed','success'],
+            ['Verification','Verifikasi hasil inspeksi oleh tim senior.','Pending','warning'],
+            ['Executive Decision','Keputusan akhir oleh pejabat berwenang.','Pending','indigo'],
+          ].map((t,i)=>`
+          <div style="display:flex;gap:16px;margin-bottom:${i<4?'18px':'0'};position:relative;z-index:1">
+            <div style="width:28px;height:28px;border-radius:50%;background:${t[2]==='Completed'?'var(--success)':'var(--bg-surface-2)'};border:2px solid ${t[2]==='Completed'?'var(--success)':'var(--border)'};display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 4px var(--bg-surface)">
+              <i class="${t[2]==='Completed'?'ri-check-line':'ri-time-line'}" style="font-size:13px;color:${t[2]==='Completed'?'#fff':'var(--text-4)'}"></i>
+            </div>
+            <div style="padding-top:2px">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+                <span style="font-size:13px;font-weight:700;color:var(--text-1)">● ${t[0]}</span>
+                <span style="background:var(--${t[3]}-soft);color:var(--${t[3]}-2);font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px">${t[2]}</span>
+              </div>
+              <div style="font-size:11px;color:var(--text-4);line-height:1.5">${t[1]}</div>
+            </div>
+          </div>`).join('')}
+        </div>
+      </div>
+
+      <!-- AI Findings -->
+      <div class="card">
+        <div class="card-header"><span class="ch-title"><i class="ri-sparkling-2-line"></i>AI Findings</span></div>
+        <div style="padding:14px 16px;display:flex;flex-direction:column;gap:8px">
+          ${[
+            ['Pollution anomaly','Lonjakan BOD 340 mg/L terdeteksi di 5 titik sensor.','ri-drop-line','danger'],
+            ['Satellite change','Perubahan lahan 280 ha di luar batas izin konsesi.','ri-satellite-line','warning'],
+            ['Compliance discrepancy','Laporan periodik Q3-2026 tidak dikirimkan (+10 hari).','ri-file-damage-line','warning'],
+          ].map(f=>`
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:var(--bg-surface-2);border-radius:7px;border-left:3px solid var(--${f[3]}-2)">
+            <i class="${f[2]}" style="font-size:16px;color:var(--${f[3]}-2);flex-shrink:0;margin-top:1px"></i>
+            <div><div style="font-size:12.5px;font-weight:700;color:var(--text-1);margin-bottom:1px">✓ ${f[0]}</div><div style="font-size:11px;color:var(--text-3);line-height:1.4">${f[1]}</div></div>
+          </div>`).join('')}
+        </div>
+      </div>
+
+      <!-- Field Findings -->
+      <div class="card">
+        <div class="card-header"><span class="ch-title"><i class="ri-search-eye-line"></i>Field Findings</span></div>
+        <div style="padding:14px 16px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+            ${[['ri-image-2-line','View Photos','14 Foto','primary'],['ri-video-line','View Videos','3 Video','violet'],['ri-bar-chart-line','View Measurements','27 Data','indigo']].map(b=>`
+            <button style="background:var(--${b[3]}-soft);color:var(--${b[3]}-2);border:1px solid rgba(0,0,0,0.05);border-radius:8px;padding:12px 8px;font-size:11px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <i class="${b[0]}" style="font-size:20px"></i>
+              <span>${b[1]}</span>
+              <span style="font-size:10px;font-weight:500;opacity:0.8">${b[2]}</span>
+            </button>`).join('')}
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px">
+            <button style="background:var(--success-soft);color:var(--success-2);border:1px solid rgba(0,0,0,0.05);border-radius:8px;padding:11px;font-size:12.5px;font-weight:700;cursor:pointer"><i class="ri-shield-check-line"></i> Verify Case</button>
+            <button style="background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border:none;border-radius:8px;padding:11px;font-size:12.5px;font-weight:700;cursor:pointer"><i class="ri-arrow-right-up-line"></i> Forward to Decision Maker</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>`
 },
+
 
 'laporan.html': {
   title: 'Laporan & Analitik', breadcrumb: 'Laporan', active: 'nav-reports',
