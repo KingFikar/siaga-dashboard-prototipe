@@ -140,6 +140,21 @@ body {
 .bn-item .nb { position:absolute; top:-2px; right:calc(50% - 18px); background:#ef4444; color:#fff; font-size:8px; font-weight:800; min-width:14px; height:14px; border-radius:99px; display:flex; align-items:center; justify-content:center; padding:0 3px; }
 
 /* ═══════════════════════════
+   SCREEN LOGIN
+═══════════════════════════ */
+.s-login { background: linear-gradient(135deg, #0f172a, #1e3a5f); display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 24px; color: #fff; }
+.login-logo { width: 60px; height: 60px; background: rgba(255,255,255,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 32px; margin-bottom: 16px; }
+.login-title { font-size: 20px; font-weight: 900; margin-bottom: 4px; }
+.login-sub { font-size: 11px; color: rgba(255,255,255,0.6); margin-bottom: 32px; text-align: center; }
+.login-form { width: 100%; display: flex; flex-direction: column; gap: 12px; }
+.login-input-wrap { position: relative; }
+.login-input-wrap i { position: absolute; left: 14px; top: 12px; color: #94a3b8; font-size: 16px; }
+.login-input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px 12px 12px 40px; color: #fff; font-size: 12px; outline: none; }
+.login-input::placeholder { color: rgba(255,255,255,0.4); }
+.login-btn { background: linear-gradient(135deg, #2563eb, #4f46e5); color: #fff; border: none; border-radius: 12px; padding: 14px; font-size: 13px; font-weight: 800; cursor: pointer; margin-top: 12px; box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+.login-footer { margin-top: 24px; font-size: 10px; color: rgba(255,255,255,0.4); display: flex; flex-direction: column; align-items: center; gap: 6px; }
+
+/* ═══════════════════════════
    SCREEN 1 — BERANDA
 ═══════════════════════════ */
 .s1-hero {
@@ -302,9 +317,42 @@ body {
   <div class="phone-screen">
 
     <!-- ══════════════════════
+         SCREEN LOGIN
+    ══════════════════════ -->
+    <div class="screen active" id="scr-login">
+      <div class="status-bar" style="background:transparent;position:absolute;top:0;width:100%;z-index:10">
+        <span class="sb-time">10:28</span>
+        <div class="sb-icons"><i class="ri-signal-wifi-fill"></i><i class="ri-4g-fill"></i><i class="ri-battery-fill"></i></div>
+      </div>
+      <div class="s-login">
+        <div class="login-logo"><i class="ri-radar-line" style="color:#60a5fa"></i></div>
+        <div class="login-title">SIAGA Mobile</div>
+        <div class="login-sub">Masuk dengan akun PPLH Anda</div>
+        
+        <div class="login-form">
+          <div class="login-input-wrap">
+            <i class="ri-user-line"></i>
+            <input type="text" class="login-input" placeholder="NIP / Username" value="198802152014031001">
+          </div>
+          <div class="login-input-wrap">
+            <i class="ri-lock-password-line"></i>
+            <input type="password" class="login-input" placeholder="Password" value="********">
+          </div>
+          <div style="text-align:right;font-size:10px;color:#93c5fd;margin-top:-4px;cursor:pointer">Lupa Password?</div>
+          <button class="login-btn" onclick="switchScreen('home')">MASUK</button>
+        </div>
+
+        <div class="login-footer">
+          <div><i class="ri-shield-check-line"></i> Akses Terbatas Kementerian LHK</div>
+          <div>v2.4.1</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════
          SCREEN 1 — BERANDA
     ══════════════════════ -->
-    <div class="screen active" id="scr-home">
+    <div class="screen" id="scr-home">
       <div class="status-bar">
         <span class="sb-time">10:30</span>
         <div class="sb-icons"><i class="ri-signal-wifi-fill"></i><i class="ri-4g-fill"></i><i class="ri-battery-fill"></i></div>
@@ -698,7 +746,7 @@ body {
           </div>
         </div>
 
-        <button class="logout-btn"><i class="ri-logout-box-r-line"></i> Keluar dari Aplikasi</button>
+        <button class="logout-btn" onclick="switchScreen('login')"><i class="ri-logout-box-r-line"></i> Keluar dari Aplikasi</button>
       </div>
 
       <div class="bottom-nav">
