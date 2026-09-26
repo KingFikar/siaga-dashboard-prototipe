@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>
+<script>
+async function go(){
+  // Fetch the page text
+  var r = await fetch('http://localhost:8765/');
+  var text = await r.text();
+  // Check first char
+  var fc = text.charCodeAt(0);
+  // Strip BOM if present
+  if (fc === 0xFEFF) text = text.substring(1);
+  // Parse inner HTML
+  var doc = new DOMParser().parseFromString(text, 'text/html');
+  document.open();
+  document.write('<!DOCTYPE html><html><head><meta charset="utf-8">' + doc.head.innerHTML + '</head><body>' + doc.body.innerHTML + '</body></html>');
+  document.close();
+  await new Promise(s=>setTimeout(s, 3000));
+  var cd = document.getElementById('chartDistribusi');
+  var data = {
+    hasChart: cd ? cd.tagName : 'NONE',
+    chartW: cd ? cd.clientWidth : 0,
+    chartH: cd ? cd.clientHeight : 0,
+    fcWas: fc.toString(16)
+  };
+  fetch('http://localhost:8766/probe',{method:'POST',body:JSON.stringify(data)});
+}
+go();
+</script></body></html>

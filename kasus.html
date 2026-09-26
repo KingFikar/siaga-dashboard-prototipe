@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAGA Command Center — Manajemen Kasus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=31">
+    
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar">
+            <div class="sb-brand">
+                <div class="sb-logo">
+                    <i class="ri-radar-line"></i>
+                </div>
+                <div class="sb-brand-text">
+                    <span class="sb-title">SIAGA</span>
+                    <span class="sb-subtitle">Command Center</span>
+                </div>
+            </div>
+
+            <nav class="sb-nav">
+                <div class="sb-nav-section">NAVIGASI UTAMA</div>
+                <a href="index.html" class="sb-link" id="nav-dashboard">
+                    <i class="ri-dashboard-2-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="peta-risiko.html" class="sb-link" id="nav-map">
+                    <i class="ri-map-2-line"></i>
+                    <span>Peta Risiko</span>
+                </a>
+                <a href="perusahaan.html" class="sb-link" id="nav-companies">
+                    <i class="ri-building-2-line"></i>
+                    <span>Perusahaan</span>
+                </a>
+                <a href="peringatan.html" class="sb-link" id="nav-alerts">
+                    <i class="ri-alarm-warning-line"></i>
+                    <span>Peringatan</span>
+                    <span class="sb-badge danger">43</span>
+                </a>
+                <a href="inspeksi.html" class="sb-link" id="nav-inspection">
+                    <i class="ri-shield-check-line"></i>
+                    <span>Inspeksi</span>
+                    <span class="sb-badge warning">58</span>
+                </a>
+                <a href="kasus.html" class="sb-link active" id="nav-cases">
+                    <i class="ri-folder-line"></i>
+                    <span>Kasus</span>
+                </a>
+
+                <div class="sb-nav-section" style="margin-top:8px">LAPORAN & ANALITIK</div>
+                <a href="laporan.html" class="sb-link" id="nav-reports">
+                    <i class="ri-bar-chart-grouped-line"></i>
+                    <span>Laporan</span>
+                </a>
+                
+            <a href="data-integration.html" class="sb-link" id="nav-integration">
+                <i class="ri-git-merge-line"></i> Data Integration
+            </a><a href="ai-analytics.html" class="sb-link" id="nav-ai">
+                    <i class="ri-sparkling-2-line"></i>
+                    <span>AI Analytics</span>
+                    <span class="sb-badge ai">BARU</span></a>
+
+<div class="sb-promo"><div class="sb-promo-title">AI Insights</div><div class="sb-promo-sub">Dapatkan analisis risiko otomatis dengan AI terbaru kami.</div><a href="#" class="sb-promo-btn">Coba sekarang <i class="ri-arrow-right-line"></i></a></div>
+
+                <div class="sb-nav-section" style="margin-top:8px">SISTEM</div>
+                <a href="administrasi.html" class="sb-link" id="nav-admin">
+                    <i class="ri-settings-3-line"></i>
+                    <span>Administrasi</span>
+                </a>
+            </nav>
+
+            <div class="sb-user">
+                <div class="sb-user-ava">AD</div>
+                <div class="sb-user-info">
+                    <span class="sb-user-name">Admin Sistem</span>
+                    <span class="sb-user-role">Super Administrator</span>
+                </div>
+                <button class="sb-logout" title="Keluar"><i class="ri-logout-box-r-line"></i></button>
+            </div>
+        </aside>
+
+        <div class="main-col">
+            <header class="topbar">
+                <div class="tb-left">
+                    <div class="tb-page-info">
+                        <h1 class="tb-title">Manajemen Kasus</h1>
+                        <nav class="tb-breadcrumb" aria-label="breadcrumb">
+                            <i class="ri-home-4-line"></i>
+                            <span>Beranda</span>
+                            <i class="ri-arrow-right-s-line"></i>
+                            <span class="active">Kasus</span>
+                        </nav>
+                    </div>
+                </div>
+                <div class="tb-right">
+                    <div class="tb-live"><span class="live-dot"></span>LIVE &mdash; 25 Sep 2026, 23:22 WIB</div>
+                    <div class="tb-search">
+                        <i class="ri-search-line"></i>
+                        <input type="text" placeholder="Cari perusahaan, wilayah, kasus…" id="global-search">
+                        <kbd>Ctrl K</kbd>
+                    </div>
+                    <button class="tb-icon-btn" id="notif-btn" aria-label="Notifikasi">
+                        <i class="ri-notification-3-line"></i><span class="notif-bubble">7</span>
+                    </button>
+                    <button class="tb-icon-btn" aria-label="Pesan"><i class="ri-mail-line"></i></button>
+                    <div class="tb-divider"></div>
+                    <div class="tb-profile" role="button" tabindex="0">
+                        <div class="tb-profile-ava">AD</div>
+                        <div class="tb-profile-meta">
+                            <div class="tb-profile-name">Admin Sistem</div>
+                            <div class="tb-profile-role">Super Admin</div>
+                        </div>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </div>
+                </div>
+            </header>
+            <div class="page-content">
+
+  <div class="kpi-grid">
+    <div class="kpi-card red" id="kpi-ks-aktif"><div class="kpi-top"><div class="kpi-icon red"><i class="ri-folder-open-line"></i></div><div class="kpi-body"><div class="kpi-val">34</div><div class="kpi-lbl">Kasus Aktif</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-delta up"><i class="ri-arrow-up-s-fill"></i>+4 pekan ini</span></div></div></div>
+    <div class="kpi-card amber" id="kpi-ks-hukum"><div class="kpi-top"><div class="kpi-icon amber"><i class="ri-scales-line"></i></div><div class="kpi-body"><div class="kpi-val">12</div><div class="kpi-lbl">Proses Hukum</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">3 sidang minggu ini</span></div></div></div>
+    <div class="kpi-card indigo" id="kpi-ks-inv"><div class="kpi-top"><div class="kpi-icon indigo"><i class="ri-time-line"></i></div><div class="kpi-body"><div class="kpi-val">18</div><div class="kpi-lbl">Investigasi</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">Rata-rata 42 hari</span></div></div></div>
+    <div class="kpi-card violet" id="kpi-ks-denda"><div class="kpi-top"><div class="kpi-icon violet"><i class="ri-money-dollar-circle-line"></i></div><div class="kpi-body"><div class="kpi-val">Rp 28,4M</div><div class="kpi-lbl">Denda Tertagih</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-delta up"><i class="ri-arrow-up-s-fill"></i>+Rp4,2M bulan ini</span></div></div></div>
+  </div>
+  <div class="card" style="overflow:hidden">
+    <div class="card-header"><span class="ch-title"><i class="ri-folder-line"></i>Daftar Kasus</span><button id="ks-add-btn" style="background:var(--primary);color:#fff;border:none;border-radius:6px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer"><i class="ri-add-line"></i> Buka Kasus Baru</button></div>
+    <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid var(--border-soft);cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='var(--bg-hover)'" onmouseout="this.style.background=''"><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap"><span style="font-family:monospace;font-size:10.5px;color:var(--text-4);background:var(--bg-surface-2);padding:1px 7px;border-radius:4px">KS-2026-089</span><span style="font-size:13px;font-weight:700;color:var(--text-1)">Pencemaran Sungai Mahakam</span></div><div style="display:flex;gap:14px;flex-wrap:wrap"><span style="font-size:11px;color:var(--text-4)"><i class="ri-building-line"></i> PT ABC Industries</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-price-tag-3-line"></i> Pencemaran Air</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-calendar-line"></i> 4 Sep 2026</span></div></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0"><span style="background:var(--danger-soft);color:var(--danger-2);font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px">Kritis</span><span style="font-size:11px;color:var(--text-3);font-weight:600">Investigasi</span></div></div><div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid var(--border-soft);cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='var(--bg-hover)'" onmouseout="this.style.background=''"><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap"><span style="font-family:monospace;font-size:10.5px;color:var(--text-4);background:var(--bg-surface-2);padding:1px 7px;border-radius:4px">KS-2026-088</span><span style="font-size:13px;font-weight:700;color:var(--text-1)">Emisi SO₂ Melebihi Baku Mutu</span></div><div style="display:flex;gap:14px;flex-wrap:wrap"><span style="font-size:11px;color:var(--text-4)"><i class="ri-building-line"></i> PT XYZ Petrochemical</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-price-tag-3-line"></i> Pencemaran Udara</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-calendar-line"></i> 28 Ags 2026</span></div></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0"><span style="background:var(--warning-soft);color:var(--warning-2);font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px">Tinggi</span><span style="font-size:11px;color:var(--text-3);font-weight:600">Proses Hukum</span></div></div><div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid var(--border-soft);cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='var(--bg-hover)'" onmouseout="this.style.background=''"><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap"><span style="font-family:monospace;font-size:10.5px;color:var(--text-4);background:var(--bg-surface-2);padding:1px 7px;border-radius:4px">KS-2026-087</span><span style="font-size:13px;font-weight:700;color:var(--text-1)">Pembukaan Lahan Ilegal 280 Ha</span></div><div style="display:flex;gap:14px;flex-wrap:wrap"><span style="font-size:11px;color:var(--text-4)"><i class="ri-building-line"></i> PT Borneo Coal</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-price-tag-3-line"></i> Perusakan Lahan</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-calendar-line"></i> 20 Ags 2026</span></div></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0"><span style="background:var(--warning-soft);color:var(--warning-2);font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px">Tinggi</span><span style="font-size:11px;color:var(--text-3);font-weight:600">Investigasi</span></div></div><div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid var(--border-soft);cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='var(--bg-hover)'" onmouseout="this.style.background=''"><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap"><span style="font-family:monospace;font-size:10.5px;color:var(--text-4);background:var(--bg-surface-2);padding:1px 7px;border-radius:4px">KS-2026-086</span><span style="font-size:13px;font-weight:700;color:var(--text-1)">Pelaporan AMDAL Tidak Valid</span></div><div style="display:flex;gap:14px;flex-wrap:wrap"><span style="font-size:11px;color:var(--text-4)"><i class="ri-building-line"></i> PT Smelter Nusantara</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-price-tag-3-line"></i> Administratif</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-calendar-line"></i> 15 Ags 2026</span></div></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0"><span style="background:var(--warning-soft);color:var(--warning-2);font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px">Sedang</span><span style="font-size:11px;color:var(--text-3);font-weight:600">Mediasi</span></div></div><div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid var(--border-soft);cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='var(--bg-hover)'" onmouseout="this.style.background=''"><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap"><span style="font-family:monospace;font-size:10.5px;color:var(--text-4);background:var(--bg-surface-2);padding:1px 7px;border-radius:4px">KS-2026-085</span><span style="font-size:13px;font-weight:700;color:var(--text-1)">Pembuangan Limbah B3 Ilegal</span></div><div style="display:flex;gap:14px;flex-wrap:wrap"><span style="font-size:11px;color:var(--text-4)"><i class="ri-building-line"></i> PT Industri Kimia Mas</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-price-tag-3-line"></i> Limbah B3</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-calendar-line"></i> 10 Ags 2026</span></div></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0"><span style="background:var(--warning-soft);color:var(--warning-2);font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px">Tinggi</span><span style="font-size:11px;color:var(--text-3);font-weight:600">Proses Hukum</span></div></div><div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid var(--border-soft);cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='var(--bg-hover)'" onmouseout="this.style.background=''"><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap"><span style="font-family:monospace;font-size:10.5px;color:var(--text-4);background:var(--bg-surface-2);padding:1px 7px;border-radius:4px">KS-2026-084</span><span style="font-size:13px;font-weight:700;color:var(--text-1)">Penambangan di Luar Batas Izin</span></div><div style="display:flex;gap:14px;flex-wrap:wrap"><span style="font-size:11px;color:var(--text-4)"><i class="ri-building-line"></i> PT MNO Mining</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-price-tag-3-line"></i> Pelanggaran Izin</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-calendar-line"></i> 5 Ags 2026</span></div></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0"><span style="background:var(--warning-soft);color:var(--warning-2);font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px">Sedang</span><span style="font-size:11px;color:var(--text-3);font-weight:600">Penyelidikan</span></div></div><div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid var(--border-soft);cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='var(--bg-hover)'" onmouseout="this.style.background=''"><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap"><span style="font-family:monospace;font-size:10.5px;color:var(--text-4);background:var(--bg-surface-2);padding:1px 7px;border-radius:4px">KS-2026-083</span><span style="font-size:13px;font-weight:700;color:var(--text-1)">Tumpahan Minyak 500 Liter</span></div><div style="display:flex;gap:14px;flex-wrap:wrap"><span style="font-size:11px;color:var(--text-4)"><i class="ri-building-line"></i> PT Energi Baru</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-price-tag-3-line"></i> Pencemaran Air</span><span style="font-size:11px;color:var(--text-4)"><i class="ri-calendar-line"></i> 1 Ags 2026</span></div></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0"><span style="background:var(--success-soft);color:var(--success-2);font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px">Rendah</span><span style="font-size:11px;color:var(--text-3);font-weight:600">Selesai</span></div></div>
+  </div>
+
+            </div><!-- /page-content -->
+            <footer class="page-footer">
+                <div class="footer-left">
+                    <span class="footer-logo"><i class="ri-radar-line"></i> SIAGA</span>
+                    <span class="footer-sep">|</span>
+                    <span>Platform Pemantauan Lingkungan dan Manajemen Risiko</span>
+                    <span class="footer-sep">|</span>
+                    <span>Kementerian Lingkungan Hidup dan Kehutanan RI &copy; 2026</span>
+                </div>
+                <div class="footer-right">
+                    <span>v2.4.1-stable</span>
+                    <span class="footer-sep">|</span>
+                    <span class="footer-status"><span class="footer-dot"></span>Sistem Aktif</span>
+                </div>
+            </footer>
+        </div><!-- /main-col -->
+    </div><!-- /app-shell -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    
+</body>
+</html>
