@@ -15,8 +15,15 @@ const geoStart    = src.indexOf(geoTagOpen);
 const geoEnd      = src.indexOf(geoTagClose, geoStart) + geoTagClose.length;
 const geoJsonScript = src.slice(geoStart, geoEnd);
 
-/* ─── Ekstrak MAP CARD HTML ─── */
-const mapCardHtml = lines.slice(220, 350).join('\n');
+
+/* ─── Ekstrak MAP CARD HTML (Robust) ─── */
+const mapStartIdx = src.indexOf('<!-- MAP CARD -->');
+const mapStartDiv = src.indexOf('<div class="card">', mapStartIdx);
+const chartRowIdx = src.indexOf('<!-- CHARTS ROW -->');
+const beforeCharts = src.slice(mapStartDiv, chartRowIdx);
+const lastDiv1 = beforeCharts.lastIndexOf('</div>');
+const lastDiv2 = beforeCharts.lastIndexOf('</div>', lastDiv1 - 1);
+const mapCardHtml = beforeCharts.slice(0, lastDiv2 + 6);
 
 function buildSidebar(activeLinkId) {
     let sb = sidebarHtml.replace(/class="sb-link active"/g, 'class="sb-link"');
