@@ -22,8 +22,8 @@ const mapStartDiv = src.indexOf('<div class="card">', mapStartIdx);
 const chartRowIdx = src.indexOf('<!-- CHARTS ROW -->');
 const beforeCharts = src.slice(mapStartDiv, chartRowIdx);
 const lastDiv1 = beforeCharts.lastIndexOf('</div>');
-const lastDiv2 = beforeCharts.lastIndexOf('</div>', lastDiv1 - 1);
-const mapCardHtml = beforeCharts.slice(0, lastDiv2 + 6);
+// lastDiv1 = closing </div> of the card — this is what we want
+const mapCardHtml = beforeCharts.slice(0, lastDiv1 + 6);
 
 function buildSidebar(activeLinkId) {
     let sb = sidebarHtml.replace(/class="sb-link active"/g, 'class="sb-link"');
