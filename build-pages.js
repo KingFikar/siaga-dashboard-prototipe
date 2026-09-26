@@ -253,24 +253,120 @@ const otherPages = {
 },
 
 'ai-analytics.html': {
-  title: 'AI Analytics', breadcrumb: 'AI Analytics', active: 'nav-ai',
+  title: 'SIAGA AI Intelligence Engine', breadcrumb: 'AI Analytics', active: 'nav-ai',
   content: `
   <div style="background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 60%,#06b6d4 100%);border-radius:var(--radius);padding:24px 28px;display:flex;align-items:center;gap:20px;margin-bottom:18px;box-shadow:0 8px 32px rgba(79,70,229,0.25)">
-    <div style="width:60px;height:60px;background:rgba(255,255,255,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ri-sparkling-2-line" style="font-size:30px;color:#fff"></i></div>
-    <div style="flex:1"><div style="font-size:20px;font-weight:800;color:#fff;margin-bottom:5px">SIAGA AI Engine v2.4</div><div style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6">Model prediktif berbasis <b style="color:#fff">LLM + Computer Vision</b> untuk deteksi anomali lingkungan real-time.</div></div>
-    <div style="background:rgba(255,255,255,0.15);border-radius:10px;padding:10px 16px;text-align:center;flex-shrink:0"><div style="font-size:24px;font-weight:800;color:#fff">97.3%</div><div style="font-size:10px;color:rgba(255,255,255,0.7);font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Akurasi Model</div></div>
+    <div style="width:60px;height:60px;background:rgba(255,255,255,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ri-brain-line" style="font-size:30px;color:#fff"></i></div>
+    <div style="flex:1">
+      <div style="font-size:20px;font-weight:800;color:#fff;margin-bottom:5px">SIAGA AI Intelligence Engine</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.6"><b>Peran:</b> Menjadi mesin analitik utama yang mengubah data lingkungan menjadi <b>environmental intelligence</b>, risk profile, anomaly alert, perubahan berbasis citra, dan rekomendasi prioritas.</div>
+    </div>
+    <div style="display:flex;gap:10px;flex-shrink:0">
+      <div style="background:rgba(255,255,255,0.15);border-radius:10px;padding:10px 18px;text-align:center"><div style="font-size:22px;font-weight:800;color:#fff">97.3%</div><div style="font-size:10px;color:rgba(255,255,255,0.75);font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Akurasi</div></div>
+      <div style="background:rgba(255,255,255,0.15);border-radius:10px;padding:10px 18px;text-align:center"><div style="font-size:22px;font-weight:800;color:#fff">2.4s</div><div style="font-size:10px;color:rgba(255,255,255,0.75);font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Respons</div></div>
+    </div>
   </div>
+
   <div class="kpi-grid">
-    <div class="kpi-card violet" id="kpi-ai-anomali"><div class="kpi-top"><div class="kpi-icon violet"><i class="ri-brain-line"></i></div><div class="kpi-body"><div class="kpi-val">43</div><div class="kpi-lbl">Anomali Terdeteksi</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">Hari ini</span></div></div></div>
-    <div class="kpi-card indigo" id="kpi-ai-pantau"><div class="kpi-top"><div class="kpi-icon indigo"><i class="ri-eye-line"></i></div><div class="kpi-body"><div class="kpi-val">1.284</div><div class="kpi-lbl">Titik Pantau</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">Sensor + Satelit</span></div></div></div>
-    <div class="kpi-card amber" id="kpi-ai-respons"><div class="kpi-top"><div class="kpi-icon amber"><i class="ri-robot-line"></i></div><div class="kpi-body"><div class="kpi-val">2,4 dtk</div><div class="kpi-lbl">Respons AI</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-delta down"><i class="ri-arrow-down-s-fill"></i>-0.3 dtk</span></div></div></div>
-    <div class="kpi-card red" id="kpi-ai-prediksi"><div class="kpi-top"><div class="kpi-icon red"><i class="ri-shield-flash-line"></i></div><div class="kpi-body"><div class="kpi-val">15</div><div class="kpi-lbl">Prediksi Risiko Baru</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">7 hari ke depan</span></div></div></div>
+    <div class="kpi-card violet" id="kpi-ai-analyzed"><div class="kpi-top"><div class="kpi-icon violet"><i class="ri-building-4-line"></i></div><div class="kpi-body"><div class="kpi-val">2.453</div><div class="kpi-lbl">Companies Analyzed</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">Total Teranalisis</span></div></div></div>
+    <div class="kpi-card red" id="kpi-ai-highrisk"><div class="kpi-top"><div class="kpi-icon red"><i class="ri-fire-line"></i></div><div class="kpi-body"><div class="kpi-val">127</div><div class="kpi-lbl">High Risk Companies</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-delta up"><i class="ri-arrow-up-s-fill"></i>+8 minggu ini</span></div></div></div>
+    <div class="kpi-card amber" id="kpi-ai-anomaly"><div class="kpi-top"><div class="kpi-icon amber"><i class="ri-radar-line"></i></div><div class="kpi-body"><div class="kpi-val">43</div><div class="kpi-lbl">Anomaly Detected</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">Hari ini</span></div></div></div>
+    <div class="kpi-card indigo" id="kpi-ai-compliance"><div class="kpi-top"><div class="kpi-icon indigo"><i class="ri-shield-check-line"></i></div><div class="kpi-body"><div class="kpi-val">86</div><div class="kpi-lbl">Compliance Alert</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">Aktif</span></div></div></div>
   </div>
+  <div class="kpi-grid" style="margin-top:-6px">
+    <div class="kpi-card" id="kpi-ai-satellite"><div class="kpi-top"><div class="kpi-icon" style="background:var(--success-soft);color:var(--success-2)"><i class="ri-satellite-line"></i></div><div class="kpi-body"><div class="kpi-val" style="color:var(--success-2)">21</div><div class="kpi-lbl">Satellite Changes</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">Perubahan Lahan</span></div></div></div>
+    <div class="kpi-card" id="kpi-ai-priority"><div class="kpi-top"><div class="kpi-icon" style="background:#fef3c7;color:#d97706"><i class="ri-focus-3-line"></i></div><div class="kpi-body"><div class="kpi-val" style="color:#d97706">58</div><div class="kpi-lbl">Priority Inspections</div></div></div><div class="kpi-bot"><div class="kpi-bot-left"><span class="kpi-info">Direkomendasikan AI</span></div></div></div>
+  </div>
+
   <div class="main-grid" style="align-items:start">
-    <div class="card"><div class="card-header"><span class="ch-title"><i class="ri-line-chart-line"></i>Prediksi Skor Risiko (30 Hari)</span></div><div style="padding:0 16px 16px">${[['PT ABC Industries','92','→ 96','↑ +4','danger'],['PT XYZ Petrochemical','84','→ 89','↑ +5','danger'],['PT MNO Mining','76','→ 72','↓ -4','success'],['PT Borneo Coal','71','→ 74','↑ +3','warning'],['PT Industri Kimia Mas','61','→ 58','↓ -3','success']].map(r=>`<div style="display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--border-soft)"><span style="flex:1;font-size:12px;font-weight:600;color:var(--text-1)">${r[0]}</span><span style="font-size:13px;font-weight:800;color:var(--text-2)">${r[1]} <span style="color:var(--text-4)">${r[2]}</span></span><span style="background:var(--${r[4]}-soft);color:var(--${r[4]}-2);font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px">${r[3]}</span></div>`).join('')}</div></div>
     <div style="display:flex;flex-direction:column;gap:18px">
-      <div class="card"><div class="card-header"><span class="ch-title"><i class="ri-cpu-line"></i>Model AI Aktif</span></div>${[['Deteksi Anomali Sensor','XGBoost + LSTM','98.1%','success'],['Analisis Citra Satelit','Vision Transformer','96.4%','success'],['Prediksi Risiko','Gradient Boosting','95.8%','success'],['NLP Analisis Laporan','BERT-ID Fine-tuned','91.2%','warning']].map(r=>`<div style="padding:12px 16px;border-bottom:1px solid var(--border-soft)"><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:12.5px;font-weight:700;color:var(--text-1)">${r[0]}</span><span style="font-size:12px;font-weight:700;color:var(--${r[3]}-2)">${r[2]}</span></div><span style="font-size:10.5px;color:var(--text-4)">${r[1]}</span><div style="height:4px;background:var(--bg-surface-3);border-radius:99px;margin-top:7px;overflow:hidden"><div style="height:100%;width:${r[2]};background:var(--${r[3]});border-radius:99px"></div></div></div>`).join('')}</div>
-      <div class="card"><div class="card-header"><span class="ch-title"><i class="ri-chat-ai-line"></i>Tanya AI</span></div><div style="padding:16px"><div style="background:var(--bg-surface-2);border:1px solid var(--border);border-radius:8px;padding:12px;font-size:12.5px;color:var(--text-2);margin-bottom:12px;line-height:1.6"><i class="ri-sparkling-2-fill" style="color:var(--primary);margin-right:6px"></i>PT ABC Industries memiliki probabilitas <b>87%</b> mengalami peningkatan risiko dalam 30 hari ke depan.</div><div style="display:flex;gap:8px"><input id="ai-chat-input" type="text" placeholder="Tanya tentang risiko atau perusahaan..." style="flex:1;background:var(--bg-surface);border:1px solid var(--border);border-radius:6px;padding:8px 12px;font-size:12.5px;color:var(--text-1);outline:none"><button style="background:var(--primary);color:#fff;border:none;border-radius:6px;padding:8px 14px;font-size:13px;cursor:pointer"><i class="ri-send-plane-fill"></i></button></div></div></div>
+
+      <div class="card" style="overflow:hidden">
+        <div class="card-header"><span class="ch-title"><i class="ri-list-ordered"></i>Top Risk — AI Scoring</span></div>
+        ${[['PT ABC Industries','92','PRIORITAS TINGGI','danger'],['PT XYZ Petrochemical','84','PRIORITAS TINGGI','danger'],['PT MNO Mining','76','PERLU PERHATIAN','warning'],['PT Borneo Coal','71','PERLU PERHATIAN','warning'],['PT Smelter Nusantara','68','PERLU PERHATIAN','warning']].map((r,i)=>`
+        <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--border-soft)">
+          <span style="width:24px;height:24px;border-radius:6px;background:var(--${r[3]}-soft);color:var(--${r[3]}-2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0">${i+1}</span>
+          <div style="flex:1;min-width:0"><div style="font-size:12.5px;font-weight:700;color:var(--text-1)">${r[0]}</div><div style="font-size:10.5px;color:var(--text-4);margin-top:2px">Risk Score: <b style="color:var(--${r[3]}-2)">${r[1]}</b></div></div>
+          <span style="background:var(--${r[3]}-soft);color:var(--${r[3]}-2);font-size:10px;font-weight:800;padding:4px 10px;border-radius:999px;text-transform:uppercase;white-space:nowrap">${r[2]}</span>
+          <button style="background:var(--primary-soft);color:var(--primary);border:none;border-radius:6px;padding:5px 11px;font-size:11px;font-weight:600;cursor:pointer">Detail</button>
+        </div>`).join('')}
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="ch-title"><i class="ri-sparkling-2-line"></i>AI Findings & Rekomendasi</span></div>
+        <div style="padding:16px;display:flex;flex-direction:column;gap:10px">
+          ${[['ri-drop-line','Pollution parameter anomaly','Anomali kadar BOD/COD terdeteksi melebihi baku mutu 3x lipat pada 5 titik sensor.','danger'],['ri-satellite-line','Satellite land-use change','Perubahan tutupan lahan 280 ha terdeteksi melalui analisis citra Sentinel-2 multitemporal.','warning'],['ri-file-damage-line','Reporting anomaly','4 perusahaan tidak mengirimkan laporan periodik Q3-2026. Tenggat terlewati.','warning'],['ri-shield-cross-line','Compliance discrepancy','Ketidaksesuaian antara izin lingkungan dan data monitoring aktual pada 12 perusahaan.','amber']].map(r=>`
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:11px 14px;background:var(--bg-surface-2);border-radius:8px;border-left:3px solid var(--${r[3]}-2)">
+            <div style="width:28px;height:28px;border-radius:6px;background:var(--${r[3]}-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="${r[0]}" style="font-size:14px;color:var(--${r[3]}-2)"></i></div>
+            <div><div style="font-size:12.5px;font-weight:700;color:var(--text-1);margin-bottom:2px">✓ ${r[1]}</div><div style="font-size:11px;color:var(--text-3);line-height:1.5">${r[2]}</div></div>
+          </div>`).join('')}
+          <div style="background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:8px;padding:14px 16px;display:flex;align-items:center;gap:12px;margin-top:4px">
+            <i class="ri-focus-3-line" style="font-size:24px;color:#fff;flex-shrink:0"></i>
+            <div><div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:2px">RECOMMENDATION: FIELD VERIFICATION</div><div style="font-size:11px;color:rgba(255,255,255,0.8)">AI merekomendasikan 58 inspeksi lapangan prioritas tinggi berdasarkan analisis risiko gabungan.</div></div>
+            <button style="background:#fff;color:#4f46e5;border:none;border-radius:6px;padding:8px 14px;font-size:12px;font-weight:800;cursor:pointer;flex-shrink:0;margin-left:auto">Lihat Daftar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:18px">
+
+      <div class="card">
+        <div class="card-header"><span class="ch-title"><i class="ri-cpu-line"></i>Komponen AI</span></div>
+        <div style="overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;font-size:12px">
+            <thead><tr style="background:var(--bg-surface-2);border-bottom:1px solid var(--border)">
+              <th style="padding:9px 12px;text-align:left;font-weight:700;color:var(--text-3);font-size:10px;text-transform:uppercase">Komponen</th>
+              <th style="padding:9px 12px;text-align:left;font-weight:700;color:var(--text-3);font-size:10px;text-transform:uppercase">Fungsi Prototipe</th>
+              <th style="padding:9px 12px;text-align:center;font-weight:700;color:var(--text-3);font-size:10px;text-transform:uppercase">Status</th>
+            </tr></thead>
+            <tbody>
+              ${[
+                ['Environmental Risk Engine','Menghitung dan menyajikan Environmental Risk Score berdasarkan faktor yang tersedia.','success','Aktif'],
+                ['Anomaly Detection','Mendeteksi pola atau nilai yang menyimpang pada data monitoring/reporting.','success','Aktif'],
+                ['Remote Sensing AI','Menganalisis perubahan yang terindikasi dari citra dan data spasial.','success','Aktif'],
+                ['Digital Compliance Engine','Menganalisis kewajiban dokumen dan membandingkannya dengan pelaporan aktual.','success','Aktif'],
+                ['Alert & Recommendation','Menghasilkan alert, alasan alert, dan rekomendasi verifikasi lapangan.','success','Aktif']
+              ].map(r=>`<tr style="border-bottom:1px solid var(--border-soft)">
+                <td style="padding:11px 12px;font-weight:700;color:var(--text-1);white-space:nowrap">${r[0]}</td>
+                <td style="padding:11px 12px;color:var(--text-2);line-height:1.5">${r[1]}</td>
+                <td style="padding:11px 12px;text-align:center"><span style="background:var(--${r[2]}-soft);color:var(--${r[2]}-2);font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px">${r[3]}</span></td>
+              </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="ch-title"><i class="ri-chat-ai-line"></i>Tanya AI Engine</span></div>
+        <div style="padding:16px">
+          <div style="background:linear-gradient(135deg,rgba(79,70,229,0.06),rgba(124,58,237,0.08));border:1px solid rgba(79,70,229,0.2);border-radius:8px;padding:14px;font-size:12.5px;color:var(--text-2);margin-bottom:12px;line-height:1.6">
+            <i class="ri-sparkling-2-fill" style="color:var(--primary);margin-right:6px"></i>
+            PT ABC Industries memiliki probabilitas <b>87%</b> mengalami peningkatan risiko dalam 30 hari ke depan. Rekomendasi: <b>inspeksi lapangan segera</b>.
+          </div>
+          <div style="display:flex;gap:8px">
+            <input id="ai-chat-input" type="text" placeholder="Tanya tentang risiko atau perusahaan..." style="flex:1;background:var(--bg-surface);border:1px solid var(--border);border-radius:6px;padding:8px 12px;font-size:12.5px;color:var(--text-1);outline:none">
+            <button style="background:var(--primary);color:#fff;border:none;border-radius:6px;padding:8px 14px;font-size:13px;cursor:pointer"><i class="ri-send-plane-fill"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="ch-title"><i class="ri-bar-chart-grouped-line"></i>Model Performance</span></div>
+        <div style="padding:14px 16px;display:flex;flex-direction:column;gap:12px">
+          ${[['Environmental Risk Engine','98.1%','var(--primary)'],['Anomaly Detection','96.4%','#7c3aed'],['Remote Sensing AI','95.8%','#0ea5e9'],['Compliance Engine','91.2%','#f59e0b']].map(r=>`
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px">
+              <span style="font-size:12px;color:var(--text-2)">${r[0]}</span>
+              <span style="font-size:12px;font-weight:800;color:var(--text-1)">${r[1]}</span>
+            </div>
+            <div style="height:6px;background:var(--bg-surface-3);border-radius:99px;overflow:hidden">
+              <div style="height:100%;width:${r[1]};background:${r[2]};border-radius:99px;transition:width 0.3s"></div>
+            </div>
+          </div>`).join('')}
+        </div>
+      </div>
+
     </div>
   </div>`
 },
