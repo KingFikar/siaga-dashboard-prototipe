@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SIAGA Mobile Inspector — Prototipe</title>
+  <title>SIAGA Field Inspector — Prototipe</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
@@ -1177,6 +1177,507 @@
       justify-content: center;
       gap: 7px;
     }
+
+    /* Professional visual refinement */
+    :root {
+      --ink: #0f172a;
+      --muted: #64748b;
+      --line: #e5e7eb;
+      --paper: #ffffff;
+      --canvas: #f3f6fb;
+      --brand: #155e75;
+      --brand-2: #0f766e;
+      --brand-soft: #e6fffb;
+      --danger: #b91c1c;
+      --warning: #b45309;
+      --success: #047857;
+      --shadow-card: 0 10px 24px rgba(15, 23, 42, 0.07);
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 18% 16%, rgba(14, 116, 144, 0.22), transparent 34%),
+        radial-gradient(circle at 82% 20%, rgba(22, 163, 74, 0.16), transparent 28%),
+        linear-gradient(135deg, #08111f 0%, #0f172a 52%, #111827 100%);
+      color: var(--ink);
+    }
+
+    .page-header {
+      max-width: 620px;
+    }
+
+    .page-header h1 {
+      letter-spacing: -0.4px;
+    }
+
+    .page-header h1 span.badge {
+      background: rgba(20, 184, 166, 0.14);
+      border: 1px solid rgba(94, 234, 212, 0.32);
+      color: #a7f3d0;
+      box-shadow: none;
+    }
+
+    .page-header p {
+      color: rgba(226, 232, 240, 0.66);
+    }
+
+    .demo-note {
+      margin: 12px auto 0;
+      background: rgba(15, 23, 42, 0.62);
+      border-color: rgba(148, 163, 184, 0.24);
+      color: #cbd5e1;
+      text-transform: none;
+      letter-spacing: 0.1px;
+      font-weight: 600;
+    }
+
+    .phone-outer {
+      width: 360px;
+      background: linear-gradient(145deg, #111827, #020617);
+      border-radius: 44px;
+      padding: 12px;
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 24px 70px rgba(0, 0, 0, 0.56),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+    }
+
+    .phone-outer::before {
+      top: 15px;
+      width: 82px;
+      height: 7px;
+      background: #030712;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .phone-outer::after {
+      background: #1f2937;
+      opacity: 0.8;
+    }
+
+    .phone-screen {
+      height: 700px;
+      border-radius: 34px;
+      background: var(--canvas);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .screen-body {
+      background: linear-gradient(180deg, #f7f9fc 0%, #eef3f8 100%);
+    }
+
+    .status-bar {
+      background: #0b1220;
+      padding: 11px 22px 7px;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .sb-time,
+    .sb-icons {
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .bottom-nav {
+      background: rgba(255, 255, 255, 0.96);
+      border-top: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 -12px 26px rgba(15, 23, 42, 0.08);
+      padding: 9px 6px 13px;
+    }
+
+    .bn-item {
+      color: #94a3b8;
+      font-size: 8.5px;
+      letter-spacing: 0.45px;
+      border-radius: 14px;
+      padding: 5px 0 3px;
+    }
+
+    .bn-item i {
+      font-size: 20px;
+    }
+
+    .bn-item.active {
+      color: var(--brand);
+      background: #ecfeff;
+    }
+
+    .bn-item .nb {
+      background: var(--danger);
+      border: 2px solid #fff;
+      top: 1px;
+    }
+
+    .s-login,
+    .s1-hero,
+    .s5-hero {
+      background:
+        linear-gradient(135deg, rgba(20, 184, 166, 0.16), transparent 44%),
+        linear-gradient(160deg, #0f172a 0%, #164e63 100%);
+    }
+
+    .s-login {
+      justify-content: flex-start;
+      padding-top: 116px;
+    }
+
+    .login-logo,
+    .s1-logo-icon,
+    .s1-notif {
+      background: rgba(255, 255, 255, 0.11);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: none;
+    }
+
+    .login-title,
+    .s1-name,
+    .profile-name {
+      letter-spacing: -0.4px;
+    }
+
+    .login-input {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
+      height: 46px;
+    }
+
+    .login-btn,
+    .btn-blue {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 10px 22px rgba(15, 118, 110, 0.24);
+    }
+
+    .s1-hero,
+    .s2-hero,
+    .s3-hero,
+    .s4-hero,
+    .s5-hero {
+      position: relative;
+      overflow: hidden;
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    .s1-hero::after,
+    .s2-hero::after,
+    .s3-hero::after,
+    .s4-hero::after,
+    .s5-hero::after {
+      content: '';
+      position: absolute;
+      right: -28px;
+      top: -30px;
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .s2-hero,
+    .s3-hero,
+    .s4-hero {
+      background:
+        linear-gradient(135deg, rgba(34, 211, 238, 0.12), transparent 42%),
+        linear-gradient(135deg, #102033, #0f172a);
+      padding-top: 16px;
+      padding-bottom: 18px;
+    }
+
+    .s2-title {
+      font-size: 17px;
+      letter-spacing: -0.3px;
+    }
+
+    .s2-sub,
+    .s1-logo-sub,
+    .login-sub,
+    .profile-role {
+      color: rgba(226, 232, 240, 0.68);
+    }
+
+    .s1-stats,
+    .rpt-summary,
+    .perf-grid {
+      gap: 10px;
+    }
+
+    .s1-stat,
+    .rpt-sum-card,
+    .perf-card {
+      border-color: rgba(226, 232, 240, 0.92);
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.04);
+    }
+
+    .s1-stat {
+      background: rgba(255, 255, 255, 0.10);
+      border-color: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(12px);
+    }
+
+    .section-title {
+      padding: 16px 18px 8px;
+      color: #475569;
+      letter-spacing: 0.9px;
+    }
+
+    .task-card,
+    .case-item,
+    .rpt-item,
+    .menu-group {
+      margin-left: 16px;
+      margin-right: 16px;
+      background: rgba(255, 255, 255, 0.98);
+      border-color: rgba(226, 232, 240, 0.92);
+      box-shadow: var(--shadow-card);
+    }
+
+    .task-card {
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .tc-head {
+      padding: 13px 15px;
+      background: #fff !important;
+      border-bottom: 1px solid #eef2f7;
+    }
+
+    .tc-head.red { border-left: 4px solid var(--danger); }
+    .tc-head.orange { border-left: 4px solid var(--warning); }
+    .tc-head.green { border-left: 4px solid var(--success); }
+
+    .tc-company {
+      color: var(--ink);
+      font-size: 13.5px;
+      letter-spacing: -0.1px;
+    }
+
+    .tc-score {
+      background: #f8fafc;
+      color: #334155;
+      border: 1px solid #e2e8f0;
+    }
+
+    .tc-body {
+      padding: 12px 15px 15px;
+    }
+
+    .tc-row {
+      margin-bottom: 8px;
+    }
+
+    .tc-lbl {
+      color: #64748b;
+    }
+
+    .tc-val {
+      color: #0f172a;
+      text-align: right;
+    }
+
+    .badge-red,
+    .badge-orange,
+    .badge-green,
+    .status-chip {
+      border-radius: 999px;
+      letter-spacing: 0.35px;
+    }
+
+    .badge-red,
+    .sc-red {
+      background: #fef2f2;
+      color: var(--danger);
+      border-color: #fecaca;
+    }
+
+    .badge-orange,
+    .sc-orange {
+      background: #fffbeb;
+      color: var(--warning);
+      border-color: #fde68a;
+    }
+
+    .badge-green,
+    .sc-green {
+      background: #ecfdf5;
+      color: var(--success);
+      border-color: #bbf7d0;
+    }
+
+    .ai-tag {
+      border-left: 0;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 7px 9px;
+      color: #334155;
+    }
+
+    .btn-full {
+      border-radius: 12px;
+      min-height: 42px;
+      letter-spacing: 0.2px;
+    }
+
+    .btn-orange {
+      background: linear-gradient(135deg, #92400e, #b45309);
+      box-shadow: 0 10px 22px rgba(180, 83, 9, 0.18);
+    }
+
+    .btn-green {
+      background: linear-gradient(135deg, #047857, #0f766e);
+      box-shadow: 0 10px 22px rgba(4, 120, 87, 0.18);
+    }
+
+    .search-bar {
+      margin: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid #dbe4ee;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .filter-tabs {
+      padding: 0 16px 12px;
+    }
+
+    .ft {
+      border-width: 1px;
+      padding: 6px 12px;
+    }
+
+    .ft.active {
+      background: var(--brand);
+      border-color: var(--brand);
+    }
+
+    .case-item,
+    .rpt-item {
+      border-radius: 16px;
+      padding: 14px 15px;
+    }
+
+    .ci-id,
+    .rpt-id {
+      background: #f1f5f9;
+      color: #475569;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.2px;
+    }
+
+    .ci-company,
+    .rpt-company,
+    .mi-label {
+      color: var(--ink);
+      letter-spacing: -0.1px;
+    }
+
+    .ci-meta span,
+    .rpt-meta span,
+    .mi-sub,
+    .meas-limit,
+    .ev-card .ev-count {
+      color: #64748b;
+    }
+
+    .risk-num {
+      font-size: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .ev-grid {
+      padding-left: 16px;
+      padding-right: 16px;
+      gap: 10px;
+    }
+
+    .ev-card {
+      border: 1px solid #dbe4ee;
+      border-radius: 16px;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .ev-card.has {
+      background: #f0fdfa;
+      border-color: #99f6e4;
+    }
+
+    .photo-strip {
+      padding-left: 16px;
+      padding-right: 16px;
+      gap: 8px;
+    }
+
+    .photo-thumb {
+      background: linear-gradient(135deg, #f8fafc, #e2e8f0) !important;
+      border: 1px solid #cbd5e1 !important;
+      color: #334155;
+      font-size: 20px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+    }
+
+    .meas-row {
+      margin-left: 16px;
+      margin-right: 16px;
+      border-color: #e2e8f0;
+      border-radius: 14px;
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.04);
+    }
+
+    .meas-val.warn {
+      color: var(--danger);
+    }
+
+    .meas-val.ok {
+      color: var(--success);
+    }
+
+    .rpt-summary,
+    .perf-grid {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .pb-track {
+      height: 6px;
+      background: #e2e8f0;
+    }
+
+    .avatar {
+      background: linear-gradient(135deg, #155e75, #0f766e);
+      box-shadow: 0 12px 26px rgba(15, 118, 110, 0.28);
+    }
+
+    .profile-badge {
+      background: rgba(255, 255, 255, 0.10);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .menu-group {
+      border-radius: 18px;
+    }
+
+    .mi-icon {
+      border-radius: 11px;
+    }
+
+    .logout-btn {
+      background: #fff;
+      border-color: #fecaca;
+      color: var(--danger);
+      border-radius: 14px;
+    }
+
+    @media (max-width: 420px) {
+      body {
+        padding: 18px 10px 28px;
+      }
+
+      .phone-outer {
+        width: min(360px, calc(100vw - 20px));
+      }
+    }
   </style>
 </head>
 
@@ -1185,12 +1686,11 @@
   <div class="page-header">
     <h1>
       <i class="ri-smartphone-line" style="color:#60a5fa"></i>
-      SIAGA Mobile Inspector
+      SIAGA Field Inspector
       <span class="badge">Prototipe</span>
     </h1>
-    <p>Klik menu pada <b style="color:#fff">Bottom Navigation</b> untuk menjelajahi semua layar — Inspector Dashboard,
-      Kasus, Bukti, Laporan, dan Profil.</p>
-    <div class="demo-note">Prototype - data, lokasi, skor, dan bukti pada aplikasi ini adalah simulasi demonstrasi.</div>
+    <p>Antarmuka lapangan untuk penugasan inspeksi, pengumpulan bukti, pengukuran, dan pengiriman laporan verifikasi.</p>
+    <div class="demo-note">Prototype. Data, lokasi, skor, dan bukti pada aplikasi ini adalah simulasi demonstrasi.</div>
   </div>
 
   <!-- ══════════════════════════════════
@@ -1210,8 +1710,8 @@
         </div>
         <div class="s-login">
           <div class="login-logo"><i class="ri-radar-line" style="color:#60a5fa"></i></div>
-          <div class="login-title">SIAGA Mobile</div>
-          <div class="login-sub">Masuk dengan akun PPLH Anda</div>
+          <div class="login-title">SIAGA Field Inspector</div>
+          <div class="login-sub">Akses petugas pengawasan lingkungan</div>
 
           <div class="login-form">
             <div class="login-input-wrap">
@@ -1222,9 +1722,9 @@
               <i class="ri-lock-password-line"></i>
               <input type="password" class="login-input" placeholder="Password" value="********">
             </div>
-            <div style="text-align:right;font-size:10px;color:#93c5fd;margin-top:-4px;cursor:pointer">Lupa Password?
+            <div style="text-align:right;font-size:10px;color:#93c5fd;margin-top:-4px;cursor:pointer">Pemulihan akses
             </div>
-            <button class="login-btn" onclick="switchScreen('home')">MASUK</button>
+            <button class="login-btn" onclick="switchScreen('home')">Masuk ke Workspace</button>
           </div>
 
           <div class="login-footer">
@@ -1249,16 +1749,16 @@
               <div class="s1-logo">
                 <div class="s1-logo-icon"><i class="ri-radar-line"></i></div>
                 <div>
-                  <div class="s1-logo-name">SIAGA Mobile</div>
-                  <div class="s1-logo-sub">Inspector App</div>
+                  <div class="s1-logo-name">SIAGA Field</div>
+                  <div class="s1-logo-sub">Inspector Workspace</div>
                 </div>
               </div>
               <div class="s1-notif"><i class="ri-notification-3-fill"></i>
                 <div class="dot"></div>
               </div>
             </div>
-            <div class="s1-greet">Selamat pagi,</div>
-            <div class="s1-name">PPLH Ahmad 👋</div>
+            <div class="s1-greet">Workspace hari ini</div>
+            <div class="s1-name">PPLH Ahmad</div>
             <div class="s1-stats">
               <div class="s1-stat">
                 <div class="s1-stat-val" style="color:#fbbf24">3</div>
@@ -1287,13 +1787,13 @@
               </div>
               <div class="tc-row"><span class="tc-lbl">Lokasi</span><span class="tc-val"><i class="ri-map-pin-line"
                      style="color:#ef4444"></i> Kab. Mimika, Papua Tengah</span></div>
-              <div class="ai-tag" style="border-left-color:#ef4444"><i class="ri-drop-line" style="color:#ef4444"></i> ✓
-                Anomaly SPARING</div>
+              <div class="ai-tag" style="border-left-color:#ef4444"><i class="ri-drop-line" style="color:#b91c1c"></i>
+                Anomali SPARING</div>
               <div class="ai-tag" style="border-left-color:#f59e0b"><i class="ri-satellite-line"
-                  style="color:#f59e0b"></i> ✓ Satellite Change</div>
+                  style="color:#f59e0b"></i> Perubahan citra satelit</div>
               <div class="ai-tag" style="border-left-color:#7c3aed"><i class="ri-shield-cross-line"
-                  style="color:#7c3aed"></i> ✓ Compliance Alert</div>
-              <button class="btn-full btn-blue"><i class="ri-play-circle-fill"></i> MULAI INSPEKSI</button>
+                  style="color:#7c3aed"></i> Alert kepatuhan</div>
+              <button class="btn-full btn-blue"><i class="ri-play-circle-fill"></i> Mulai Inspeksi</button>
             </div>
           </div>
 
@@ -1308,8 +1808,8 @@
               <div class="tc-row"><span class="tc-lbl">Lokasi</span><span class="tc-val"><i class="ri-map-pin-line"
                     style="color:#f59e0b"></i> Kab. Tabalong, Kalsel</span></div>
               <div class="ai-tag" style="border-left-color:#f59e0b"><i class="ri-file-damage-line"
-                  style="color:#f59e0b"></i> ✓ Reporting Anomaly</div>
-              <button class="btn-full btn-orange"><i class="ri-map-pin-fill"></i> LIHAT LOKASI</button>
+                  style="color:#f59e0b"></i> Anomali pelaporan</div>
+              <button class="btn-full btn-orange"><i class="ri-map-pin-fill"></i> Lihat Lokasi</button>
             </div>
           </div>
 
@@ -1323,7 +1823,7 @@
               <div class="tc-row"><span class="tc-lbl">Lokasi</span><span class="tc-val"><i class="ri-map-pin-line"
                     style="color:#10b981"></i> Kab. Ketapang, Kalbar</span></div>
               <button class="btn-full btn-green" style="margin-top:6px"><i class="ri-calendar-check-line"></i>
-                JADWALKAN</button>
+                Jadwalkan</button>
             </div>
           </div>
 
@@ -1352,7 +1852,7 @@
         <div class="screen-body">
           <div class="s2-hero">
             <div class="s2-title"><i class="ri-folder-shield-2-line"></i> Daftar Kasus</div>
-            <div class="s2-sub">7 kasus aktif · 4 tugas selesai bulan ini</div>
+            <div class="s2-sub">7 kasus aktif · 4 verifikasi selesai bulan ini</div>
           </div>
           <div class="search-bar">
             <i class="ri-search-line"></i>
@@ -1361,8 +1861,8 @@
           <div class="filter-tabs">
             <div class="ft active">Semua</div>
             <div class="ft">Aktif</div>
-            <div class="ft">Inspection</div>
-            <div class="ft">Verification</div>
+            <div class="ft">Inspeksi</div>
+            <div class="ft">Verifikasi</div>
             <div class="ft">Selesai</div>
           </div>
 
@@ -1374,7 +1874,7 @@
               </div>
               <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
                 <div class="risk-num" style="color:#ef4444">92</div>
-                <span class="status-chip sc-orange">INSPECTION</span>
+                <span class="status-chip sc-orange">Inspeksi</span>
               </div>
             </div>
             <div class="ci-meta"><span><i class="ri-map-pin-line"></i>Kab. Mimika, Papua Tengah</span><span><i
@@ -1389,7 +1889,7 @@
               </div>
               <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
                 <div class="risk-num" style="color:#ef4444">84</div>
-                <span class="status-chip sc-indigo">VERIFICATION</span>
+                <span class="status-chip sc-indigo">Verifikasi</span>
               </div>
             </div>
             <div class="ci-meta"><span><i class="ri-map-pin-line"></i>Kab. Kutai Timur, Kaltim</span><span><i
@@ -1404,7 +1904,7 @@
               </div>
               <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
                 <div class="risk-num" style="color:#f59e0b">76</div>
-                <span class="status-chip sc-orange">ASSIGNED</span>
+                <span class="status-chip sc-orange">Ditugaskan</span>
               </div>
             </div>
             <div class="ci-meta"><span><i class="ri-map-pin-line"></i>Kab. Tabalong, Kalsel</span><span><i
@@ -1419,7 +1919,7 @@
               </div>
               <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
                 <div class="risk-num" style="color:#10b981">38</div>
-                <span class="status-chip sc-green">CLOSED</span>
+                <span class="status-chip sc-green">Selesai</span>
               </div>
             </div>
             <div class="ci-meta"><span><i class="ri-map-pin-line"></i>Sumatera Selatan</span><span><i
@@ -1434,7 +1934,7 @@
               </div>
               <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
                 <div class="risk-num" style="color:#f59e0b">71</div>
-                <span class="status-chip sc-orange">INSPECTION</span>
+                <span class="status-chip sc-orange">Inspeksi</span>
               </div>
             </div>
             <div class="ci-meta"><span><i class="ri-map-pin-line"></i>Berau, Kaltim</span><span><i
@@ -1449,7 +1949,7 @@
               </div>
               <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
                 <div class="risk-num" style="color:#7c3aed">68</div>
-                <span class="status-chip sc-violet">EXE. DECISION</span>
+                <span class="status-chip sc-violet">Keputusan</span>
               </div>
             </div>
             <div class="ci-meta"><span><i class="ri-map-pin-line"></i>Konawe, Sultra</span><span><i
@@ -1464,7 +1964,7 @@
               </div>
               <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
                 <div class="risk-num" style="color:#ef4444">61</div>
-                <span class="status-chip sc-red">ALERT</span>
+                <span class="status-chip sc-red">Alert</span>
               </div>
             </div>
             <div class="ci-meta"><span><i class="ri-map-pin-line"></i>Gresik, Jatim</span><span><i
@@ -1495,7 +1995,7 @@
         <div class="screen-body">
           <div class="s3-hero">
             <div class="s2-title"><i class="ri-camera-lens-line"></i> Bukti Lapangan</div>
-            <div class="s2-sub">CASE-001 · PT Freeport Indonesia · In Progress</div>
+            <div class="s2-sub">CASE-001 · PT Freeport Indonesia · Sedang diverifikasi</div>
           </div>
 
           <div class="section-title"><i class="ri-layout-grid-line"></i> Koleksi Bukti</div>
@@ -1528,12 +2028,12 @@
 
           <div class="section-title"><i class="ri-image-2-line"></i> Galeri Foto</div>
           <div class="photo-strip">
-            <div class="photo-thumb" style="background:#fef2f2;border-color:#fecaca">🏭</div>
-            <div class="photo-thumb" style="background:#fffbeb;border-color:#fde68a">🌊</div>
-            <div class="photo-thumb" style="background:#f0fdf4;border-color:#bbf7d0">📋</div>
-            <div class="photo-thumb" style="background:#eff6ff;border-color:#bfdbfe">🔬</div>
-            <div class="photo-thumb" style="background:#f5f3ff;border-color:#ddd6fe">🧪</div>
-            <div class="photo-thumb" style="background:#fff7ed;border-color:#fed7aa">🌡️</div>
+            <div class="photo-thumb" style="background:#fef2f2;border-color:#fecaca"><i class="ri-building-4-line"></i></div>
+            <div class="photo-thumb" style="background:#fffbeb;border-color:#fde68a"><i class="ri-drop-line"></i></div>
+            <div class="photo-thumb" style="background:#f0fdf4;border-color:#bbf7d0"><i class="ri-file-list-3-line"></i></div>
+            <div class="photo-thumb" style="background:#eff6ff;border-color:#bfdbfe"><i class="ri-flask-line"></i></div>
+            <div class="photo-thumb" style="background:#f5f3ff;border-color:#ddd6fe"><i class="ri-test-tube-line"></i></div>
+            <div class="photo-thumb" style="background:#fff7ed;border-color:#fed7aa"><i class="ri-temp-hot-line"></i></div>
             <div class="photo-thumb add" style="color:#94a3b8"><i class="ri-add-line" style="font-size:22px"></i></div>
           </div>
 
@@ -1545,7 +2045,7 @@
             </div>
             <div style="text-align:right">
               <div class="meas-val warn">340 <span class="meas-unit">mg/L</span></div>
-              <div style="font-size:9px;color:#ef4444;font-weight:700">MELEBIHI ⚠</div>
+              <div style="font-size:9px;color:#ef4444;font-weight:700">Melebihi</div>
             </div>
           </div>
           <div class="meas-row">
@@ -1555,7 +2055,7 @@
             </div>
             <div style="text-align:right">
               <div class="meas-val warn">4.2</div>
-              <div style="font-size:9px;color:#ef4444;font-weight:700">ASAM ⚠</div>
+              <div style="font-size:9px;color:#ef4444;font-weight:700">Asam</div>
             </div>
           </div>
           <div class="meas-row">
@@ -1565,7 +2065,7 @@
             </div>
             <div style="text-align:right">
               <div class="meas-val ok">156 <span class="meas-unit">mg/L</span></div>
-              <div style="font-size:9px;color:#10b981;font-weight:700">AMAN ✓</div>
+              <div style="font-size:9px;color:#10b981;font-weight:700">Dalam batas</div>
             </div>
           </div>
           <div class="meas-row">
@@ -1575,7 +2075,7 @@
             </div>
             <div style="text-align:right">
               <div class="meas-val warn">78 <span class="meas-unit">µg/m³</span></div>
-              <div style="font-size:9px;color:#ef4444;font-weight:700">MELEBIHI ⚠</div>
+              <div style="font-size:9px;color:#ef4444;font-weight:700">Melebihi</div>
             </div>
           </div>
 
@@ -1603,7 +2103,7 @@
         <div class="screen-body">
           <div class="s4-hero">
             <div class="s2-title"><i class="ri-file-chart-line"></i> Laporan Saya</div>
-            <div class="s2-sub">Riwayat & status pengiriman laporan inspeksi</div>
+            <div class="s2-sub">Status laporan dan kelengkapan berkas inspeksi</div>
           </div>
 
           <div class="rpt-summary">
@@ -1625,7 +2125,7 @@
 
           <div class="rpt-item">
             <div class="rpt-head">
-              <div class="rpt-id">RPT-001</div><span class="status-chip sc-green">Terkirim ✓</span>
+              <div class="rpt-id">RPT-001</div><span class="status-chip sc-green">Terkirim</span>
             </div>
             <div class="rpt-company">PT Freeport Indonesia</div>
             <div class="rpt-meta"><span><i class="ri-calendar-line"></i>25 Sep 2026</span><span><i
@@ -1668,7 +2168,7 @@
 
           <div class="rpt-item">
             <div class="rpt-head">
-              <div class="rpt-id">RPT-004</div><span class="status-chip sc-green">Terkirim ✓</span>
+              <div class="rpt-id">RPT-004</div><span class="status-chip sc-green">Terkirim</span>
             </div>
             <div class="rpt-company">PT Vale Indonesia Tbk</div>
             <div class="rpt-meta"><span><i class="ri-calendar-line"></i>18 Sep 2026</span><span><i
@@ -1766,7 +2266,7 @@
               <div class="mi-icon" style="background:#f5f3ff"><i class="ri-smartphone-fill" style="color:#7c3aed"></i>
               </div>
               <div class="mi-text">
-                <div class="mi-label">SIAGA Mobile Inspector</div>
+                <div class="mi-label">SIAGA Field Inspector</div>
                 <div class="mi-sub">Versi 2.4.1 · Build 2026.09</div>
               </div>
               <i class="ri-arrow-right-s-line mi-arrow"></i>
@@ -1808,7 +2308,7 @@
   </div><!-- /phone-outer -->
 
   <div style="text-align:center">
-    <p style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:0.5px">SIAGA Mobile Inspector — Prototipe
+    <p style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:0.5px">SIAGA Field Inspector — Prototipe
       Presentasi &copy; 2026 KLH/BPLH</p>
   </div>
 
